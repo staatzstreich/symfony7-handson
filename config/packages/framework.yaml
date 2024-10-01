@@ -9,6 +9,11 @@ framework:
     #esi: true
     #fragments: true
 
+    form:
+        csrf_protection: true
+        enabled: true
+
+
 when@test:
     framework:
         test: true
