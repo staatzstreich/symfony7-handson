@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<!-- <html class="dark"> -->
-<html>
+<html class="">
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
@@ -37,6 +36,9 @@
                 {% else %}
                     <div>
                         <a href="{{ path('app_login') }}">Login</a>
+                    </div>
+                    <div></div>
+                        <a href="{{ path('app_register') }}">Register</a>
                     </div>
                 {% endif %}
 
