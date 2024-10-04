@@ -20,7 +20,7 @@ class UserProfileType extends AbstractType
             ->add('company')
             ->add('location')
             ->add(
-                'dayOfBirth',
+                'dateOfBirth',
                 DateType::class,
                 [
                     'widget' => 'single_text',

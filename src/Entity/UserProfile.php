@@ -33,11 +33,14 @@ class UserProfile
     private ?string $location = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
-    private ?\DateTimeInterface $dayOfBirth = null;
+    private ?\DateTimeInterface $dateOfBirth = null;
 
     #[ORM\OneToOne(inversedBy: 'userProfile', cascade: ['persist', 'remove'])]
     #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
+
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $image;
 
     public function getId(): ?int
     {
@@ -116,14 +119,14 @@ class UserProfile
         return $this;
     }
 
-    public function getDayOfBirth(): ?\DateTimeInterface
+    public function getDateOfBirth(): ?\DateTimeInterface
     {
-        return $this->dayOfBirth;
+        return $this->dateOfBirth;
     }
 
-    public function setDayOfBirth(?\DateTimeInterface $dayOfBirth): static
+    public function setDateOfBirth(?\DateTimeInterface $dateOfBirth): static
     {
-        $this->dayOfBirth = $dayOfBirth;
+        $this->dateOfBirth = $dateOfBirth;
 
         return $this;
     }
@@ -136,6 +139,18 @@ class UserProfile
     public function setUser(User $user): static
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(?string $image): self
+    {
+        $this->image = $image;
 
         return $this;
     }

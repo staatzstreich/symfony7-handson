@@ -24,11 +24,13 @@ class AppFixtures extends Fixture
         );
         $user1->setVerified(true);
         $manager->persist($user1);
+
         $user2 = new User();
         $user2->setEmail('user2@test.com');
         $user2->setPassword(
             $this->userPasswordHasher->hashPassword($user2, '12345678')
         );
+        $user2->setVerified(true);
         $manager->persist($user2);
 
         $microPost1 = new MicroPost();

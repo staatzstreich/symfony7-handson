@@ -124,7 +124,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $roles[] = 'ROLE_USER';
 
         if ($this->isVerified()) {
-            $roles[] = 'ROLE_WRITER';
+            $roles[] = 'ROLE_COMMENTER';
         }
 
         return array_unique($roles);
